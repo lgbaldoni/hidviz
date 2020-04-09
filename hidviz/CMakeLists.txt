@@ -1,6 +1,13 @@
 cmake_minimum_required(VERSION 3.2)
 project(hidviz VERSION 0.1.5 LANGUAGES C CXX)
 
+# Cmake 3.17 changed automoc behaviour for header files with .hh extension.
+# Now these files are passed to automoc. When policy is set to <3.17, these
+# file are no more passed to it. This is very weird, because this just worked
+# in cmake <3.17. Setting the policies to 3.17 fixes this, because we want
+# .hh to be included.
+cmake_policy(SET CMD0100 NEW)
+
 # Find the QtWidgets library
 find_package(Qt5 REQUIRED COMPONENTS Widgets)
 
