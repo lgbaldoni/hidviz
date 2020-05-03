@@ -1,3 +1,4 @@
 [submodule "libhidx"]
 	path = libhidx
-	url = https://github.com/ondrejbudai/libhidx.git
+	url = https://github.com/lgbaldoni/libhidx.git
+        branch = meson
